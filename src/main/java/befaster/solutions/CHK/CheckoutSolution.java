@@ -44,8 +44,22 @@ public class CheckoutSolution {
 
         String remainingProducts = skus.trim().replace(" ","");
 
-        //System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdA = countSpecialProducts(remainingProducts,"A");
+        int countProdB = countSpecialProducts(remainingProducts,"B");
+        int countProdC = countSpecialProducts(remainingProducts,"C");
+        int countProdD = countSpecialProducts(remainingProducts,"D");
+        int countProdE = countSpecialProducts(remainingProducts,"E");
+
+        //Special offers remove stringssss
+        int countBFree = countProdE / 2;
+        if(countBFree > 0) {
+            for(int i=0; i< countBFree; i++) {
+                
+            }
+        }
+
+        //System.out.println("==>remainingProducts [" + remainingProducts + "]");
+
         int sumA =0 ;
         if(countProdA > 0 ) {
             int countProd5A = countProdA / 5;
@@ -60,7 +74,6 @@ public class CheckoutSolution {
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int sumB = 0;
-        int countProdB = countSpecialProducts(remainingProducts,"B");
         if(countProdB > 0) {
             int countProd2B = countProdB / 2;
             int countRestB = countProdB % 2;
@@ -70,7 +83,7 @@ public class CheckoutSolution {
         }
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
-        int countProdC = countSpecialProducts(remainingProducts,"C");
+
         int sumC = 0;
         if(countProdC > 0) {
             sumC = values.get("C") * countProdC;
@@ -79,7 +92,7 @@ public class CheckoutSolution {
         }
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
-        int countProdD = countSpecialProducts(remainingProducts,"D");
+
         int sumD = 0;
         if(countProdD > 0) {
             sumD = values.get("D") * countProdD;
@@ -88,12 +101,11 @@ public class CheckoutSolution {
         }
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
-        int countProdE = countSpecialProducts(remainingProducts,"E");
         int sumE = 0;
         if(countProdE > 0) {
             sumE = values.get("E") * countProdE;
             System.out.println("======>E " + sumE);
-            int countBFree = countProdE / 2;
+
             if (sumB > 0) sumB = sumB - countBFree * values.get("B");
             if (sumB < 0) sumB = 0;
             remainingProducts = remainingProducts.replace("E", "");
@@ -153,6 +165,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
