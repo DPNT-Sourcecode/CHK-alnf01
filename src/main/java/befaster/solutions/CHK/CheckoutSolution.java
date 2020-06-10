@@ -387,10 +387,3 @@ public class CheckoutSolution {
 
 
 }
-
-
-
-
-
-
-
