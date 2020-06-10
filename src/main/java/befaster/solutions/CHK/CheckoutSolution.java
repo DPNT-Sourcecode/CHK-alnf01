@@ -13,12 +13,12 @@ public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
 //        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
-        System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
-        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
-        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
-        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
-        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
-        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
+          System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
+//        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
+//        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
+//        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
+//        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
+//        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
 
 //        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
 //        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
@@ -203,7 +203,7 @@ public class CheckoutSolution {
         allowedChars.add("Y");
         allowedChars.add("Z");
 
-        //System.out.println("-->" + skus);
+        System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
         //System.out.println("-->" + skusReduced);
         for(int i=0; i< skusReduced.length(); i++) {
@@ -236,9 +236,3 @@ public class CheckoutSolution {
 
 
 }
-
-
-
-
-
-
