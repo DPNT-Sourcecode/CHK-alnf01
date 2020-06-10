@@ -9,8 +9,8 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-//    public static void main(String ...argv) {
-//        System.out.println("CHK_START");
+    public static void main(String ...argv) {
+        System.out.println("CHK_START");
 //        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
 //        System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
 //        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
@@ -18,17 +18,17 @@ public class CheckoutSolution {
 //        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
 //        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
 //        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
-//
-////        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-////        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
-////        System.out.println("(B)(30)[" + checkout("B") + "]");
-////        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-////        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
-//
-//        System.out.println("CHK_END");
-//    }
 
-    public Integer checkout(String skus) {
+//        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+//        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+//        System.out.println("(B)(30)[" + checkout("B") + "]");
+//        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
+//        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+
+        System.out.println("CHK_END");
+    }
+
+    public static  Integer checkout(String skus) {
         //validate
         System.out.println("{"+skus+"}");
         if(skus==null) return -1;
@@ -41,6 +41,7 @@ public class CheckoutSolution {
         values.put("C", 20);
         values.put("D", 15);
         values.put("E", 40);
+        values.put("E", 10);
         values.put("3A", 130);
         values.put("5A", 200);
         values.put("2B", 45);
@@ -167,3 +168,4 @@ public class CheckoutSolution {
 
 
 }
+
