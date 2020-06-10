@@ -35,7 +35,8 @@ public class CheckoutSolution {
 //        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
 //        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
 
-//        System.out.println("(CCDD)(35)[" + checkout("CCDD") + "]");
+//        System.out.println("(CCDD)(35)[" + checkout("CCDD") +
+        //System.out.println("(CDGIJ)(150)[" + checkout("CDGIJ") + "]");
         System.out.println("CHK_END");
     }
 
@@ -106,6 +107,15 @@ public class CheckoutSolution {
         remainingProducts = simpleProduct(remainingProducts,"G");
         remainingProducts = simpleProduct(remainingProducts,"I");
         remainingProducts = simpleProduct(remainingProducts,"J");
+        remainingProducts = simpleProduct(remainingProducts,"L");
+        remainingProducts = simpleProduct(remainingProducts,"M");
+        remainingProducts = simpleProduct(remainingProducts,"O");
+        remainingProducts = simpleProduct(remainingProducts,"S");
+        remainingProducts = simpleProduct(remainingProducts,"T");
+        remainingProducts = simpleProduct(remainingProducts,"W");
+        remainingProducts = simpleProduct(remainingProducts,"X");
+        remainingProducts = simpleProduct(remainingProducts,"Y");
+        remainingProducts = simpleProduct(remainingProducts,"Z");
 
 
         //Special offers remove for 2E have 1 B
@@ -271,7 +281,7 @@ public class CheckoutSolution {
         int countProdG = prices.get(product);
         if(countProdG > 0) {
             sum.put(product, values.get(product) * countProdG);
-            System.out.println("======>G " + sum.get(product));
+            //System.out.println("======>G " + sum.get(product));
             remainingProducts = remainingProducts.replace(product, "");
         }
         return  remainingProducts;
@@ -279,6 +289,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
