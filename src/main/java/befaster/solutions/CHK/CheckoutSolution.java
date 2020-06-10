@@ -33,14 +33,20 @@ public class CheckoutSolution {
         allowedChars.add("C");
         allowedChars.add("D");
 
+        System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","");
+        System.out.println("-->" + skusReduced);
         for(int i=0; i< skusReduced.length(); i++) {
+
             String checkedString = skusReduced.substring(i);
+            System.out.println("---->" + checkedString);
             if(!allowedChars.contains(checkedString)) return false;
         }
+        System.out.println("-->" + "\n");
         return true;
     }
 }
+
 
 
 
