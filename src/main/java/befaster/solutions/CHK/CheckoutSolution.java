@@ -11,12 +11,12 @@ import java.util.Map;
 public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
-        //System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
-        //System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-        //System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
-        //System.out.println("(B)(30)[" + checkout("B") + "]");
+        System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
+        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+        System.out.println("(B)(30)[" + checkout("B") + "]");
         System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-        //System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
 
         System.out.println("CHK_END");
     }
@@ -49,22 +49,24 @@ public class CheckoutSolution {
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdB = countSpecialProducts(remainingProducts,"B");
         int countProd2B = countProdB/2;
-        int countRestB = countProdA%2;
-        int sumB = countProd2B*values.get("2B") + countRestA*values.get("B");
+        int countRestB = countProdB%2;
+        int sumB = countProd2B*values.get("2B") + countRestB*values.get("B");
+        System.out.println("======>B " + countProdB + "--" + countProd2B + "--" + countRestB + "--------" + sumB);
         remainingProducts = remainingProducts.replace("B","");
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdC = countSpecialProducts(remainingProducts,"C");
+        int sumC = values.get("C") * countProdC;;
+        System.out.println("======>C " +  sumC);
         remainingProducts = remainingProducts.replace("C","");
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdD = countSpecialProducts(remainingProducts,"D");
+        int sumD = values.get("D") * countProdD;;
+        System.out.println("======>D " +  sumD);
         remainingProducts = remainingProducts.replace("D","");
 
-        int sum =0;
-        sum = sumA + sumB;
-        sum += values.get("C") * countProdC;
-        sum += values.get("D") * countProdD;
+        int sum = sumA + sumB + sumC + sumD;
 
 
         System.out.println("SUM ("+skus+") = [" + sum + "]");
@@ -114,6 +116,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
