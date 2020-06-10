@@ -37,6 +37,8 @@ public class CheckoutSolution {
 
 //        System.out.println("(CCDD)(35)[" + checkout("CCDD") +
         //System.out.println("(CDGIJ)(150)[" + checkout("CDGIJ") + "]");
+
+        System.out.println("(H)(10)[" + checkout("H");
         System.out.println("CHK_END");
     }
 
@@ -77,6 +79,8 @@ public class CheckoutSolution {
         values.put("3A", 130);
         values.put("5A", 200);
         values.put("2B", 45);
+        values.put("10H", 80);
+        values.put("5H", 45);
 
         String remainingProducts = skus.trim().replace(" ","");
 
@@ -157,7 +161,7 @@ public class CheckoutSolution {
             int countRestB = countProdB % 2;
             sum.put("B", countProd2B * values.get("2B") + countRestB * values.get("B"));
             System.out.println("======>B " + countProd2B + "--" + countRestB + "--------" + sum.get("B"));
-            remainingProducts = remainingProducts.replace("A", "");
+            remainingProducts = remainingProducts.replace("B", "");
         }
 
         //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
@@ -167,6 +171,19 @@ public class CheckoutSolution {
             sum.put("F", offerSameProduct("F", 2, sum.get("F")));
             System.out.println("======>F " + sum.get("F"));
             remainingProducts = remainingProducts.replace("F", "");
+        }
+
+        int countProdH = prices.get("H");
+        if(countProdH > 0 ) {
+            int countProd10H = countProdH / 10;
+            countProdH = countProdH - countProd10H*10;
+            int countProd5H = countProdH /5;
+            countProdH = countProdH - countProd5H*5;
+
+
+            sum.put("H", countProd10H * values.get("10H") + countProd5H * values.get("5H") + countProdH*values.get("H"));
+            System.out.println("======>B " + countProd10H + "--" + countProd5H + "--" + countProdH + "--------" + sum.get("H"));
+            remainingProducts = remainingProducts.replace("H", "");
         }
 
         int countProdU = prices.get("U");
@@ -288,3 +305,4 @@ public class CheckoutSolution {
 
 
 }
+
