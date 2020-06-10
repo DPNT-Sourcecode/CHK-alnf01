@@ -331,6 +331,10 @@ public class CheckoutSolution {
         System.out.println(bundleOfferSum);
         System.out.println(bundleOfferCopy);
 
+        String offerRest = bundleOfferCopy.get(0);
+        for(int i=0;i<offerRest.length();i++) {
+            offerRest.getChars(i);
+        }
 
         return totalSum;
     }
@@ -436,4 +440,5 @@ public class CheckoutSolution {
 
 
 }
+
 
