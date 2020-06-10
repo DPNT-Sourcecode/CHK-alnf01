@@ -315,6 +315,18 @@ public class CheckoutSolution {
         bundleOffers.add(sb.toString());
         System.out.println(bundleOffers);
 
+        int bundleOfferSum =0;
+        int bundleOfferRest = 0;
+        for(int i=0;i<bundleOffers.size();i++) {
+            if(bundleOffers.get(i).length()==3) {
+                bundleOfferSum+=45;
+                bundleOffers.remove(i);
+            }
+        }
+        System.out.println(bundleOfferSum);
+        System.out.println(bundleOffers);
+
+
         return totalSum;
     }
 
@@ -419,7 +431,3 @@ public class CheckoutSolution {
 
 
 }
-
-
-
-
