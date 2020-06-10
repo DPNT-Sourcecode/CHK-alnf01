@@ -10,11 +10,11 @@ public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
         System.out.println("(null)[" + checkout(null) + "]");
-        System.out.println("(null)[" + checkout("Z") + "]");
-        System.out.println("(null)[" + checkout("AZ") + "]");
-        System.out.println("(null)[" + checkout("AB") + "]");
-        System.out.println("(null)[" + checkout("AC3A2B") + "]");
-        System.out.println("(null)[" + checkout("AC3A2B0") + "]");
+        System.out.println("(Z)[" + checkout("Z") + "]");
+        System.out.println("(AZ)[" + checkout("AZ") + "]");
+        System.out.println("(AB)[" + checkout("AB") + "]");
+        System.out.println("(AC3A2B)[" + checkout("AC3A2B") + "]");
+        System.out.println("(AC3A2B0)[" + checkout("AC3A2B0") + "]");
 
         System.out.println("CHK_END");
     }
@@ -40,14 +40,13 @@ public class CheckoutSolution {
 
             String checkedString = skusReduced.substring(i);
             System.out.println("---->" + checkedString);
-            if(!allowedChars.contains(checkedString)) return false;
+            boolean containsChar = false;
+            for(String s : allowedChars) {
+                if(s.equals(checkedString)) containsChar=true;
+            }
+            if(!containsChar) return false;
         }
-        System.out.println("-->" + "\n");
+
         return true;
     }
 }
-
-
-
-
-
