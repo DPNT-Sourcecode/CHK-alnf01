@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class CheckoutSolution {
 
+    private static Map<String,Integer> values = new HashMap<>();
+    private static Map<String,Integer> prices = new HashMap<>();
+    private static Map<String,Integer> sum = new HashMap<>();
 
     public static void main(String ...argv) {
         System.out.println("CHK_START");
@@ -42,7 +45,7 @@ public class CheckoutSolution {
         if(!chekcValidSku(skus)) return -1;
         if(skus.isEmpty()) return 0;
 
-        Map<String,Integer> values = new HashMap<>();
+
         values.put("A", 50);
         values.put("B", 30);
         values.put("C", 20);
@@ -77,7 +80,7 @@ public class CheckoutSolution {
 
         System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
 
-        Map<String,Integer> prices = new HashMap<>();
+
         for(String s: values.keySet()) {
             int count = countSpecialProducts(remainingProducts, s);
             //System.out.println("-->counter for [" + s + "]=[" + count + "]");
@@ -86,7 +89,7 @@ public class CheckoutSolution {
             //System.out.println(prices.get(s));
         }
 
-        Map<String,Integer> sum = new HashMap<>();
+
         for(String s: values.keySet()) {
             sum.put(s, 0)  ;
         }
@@ -163,7 +166,7 @@ public class CheckoutSolution {
         int countProdF = prices.get("F");
         if(countProdF > 0) {
             sum.put("F",values.get("F") * countProdF);
-            sum.put("F", offerSameProduct("F", 2, sum.get("F"), values, prices));
+            sum.put("F", offerSameProduct("F", 2, sum.get("F")));
             System.out.println("======>F " + sum.get("F"));
             remainingProducts = remainingProducts.replace("F", "");
         }
@@ -263,7 +266,7 @@ public class CheckoutSolution {
         return remainingProducts;
     }
 
-    public static int offerSameProduct(String product, int freeAtNumber,  int startingSum ,Map<String,Integer> values, Map<String,Integer> prices ) {
+    public static int offerSameProduct(String product, int freeAtNumber,  int startingSum ) {
         int countFree = prices.get(product) / (freeAtNumber+1);
 
         for(int i=0;i<countFree;i++) {
@@ -273,8 +276,19 @@ public class CheckoutSolution {
         return startingSum;
     }
 
+    public static String simpleProduct(String remainingProducts, String product) {
+        int countProdG = prices.get(product);
+        if(countProdG > 0) {
+            sum.put(product, values.get(product) * countProdG);
+            System.out.println("======>G " + sum.get(product));
+            remainingProducts = remainingProducts.replace(product, "");
+        }
+        return  remainingProducts;
+    }
+
 
 }
+
 
 
 
