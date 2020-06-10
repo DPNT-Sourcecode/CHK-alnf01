@@ -104,6 +104,8 @@ public class CheckoutSolution {
         values.put("5H", 45);
         values.put("2K", 150);
         values.put("5P", 200);
+        values.put("2V", 90);
+        values.put("3V", 130);
 
         String remainingProducts = skus.trim().replace(" ","");
 
@@ -244,6 +246,19 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("U", "");
         }
 
+        int countProdV = prices.get("V");
+        if(countProdV > 0 ) {
+            int countProd3V = countProdV / 3;
+            countProdV = countProdV - countProd3V*3;
+            int countProd2V = countProdV /2;
+            countProdV = countProdV - countProd2V*5;
+
+
+            sum.put("V", countProd3V * values.get("3V") + countProd2V * values.get("2V") + countProdV*values.get("V"));
+            System.out.println("======>B " + countProd3V + "--" + countProd2V + "--" + countProdV + "--------" + sum.get("V"));
+            remainingProducts = remainingProducts.replace("V", "");
+        }
+
 
         int totalSum = 0;
         for(Integer v : sum.values()) {
@@ -355,6 +370,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
