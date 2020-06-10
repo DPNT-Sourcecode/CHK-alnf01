@@ -283,6 +283,17 @@ public class CheckoutSolution {
 
 
         System.out.println("SUM ("+skus+") = [" + sum + "]");
+
+
+        int countS = prices.get("S");
+        int countT = prices.get("T");
+        int countX = prices.get("X");
+        int countY = prices.get("Y");
+        int countZ = prices.get("Z");
+
+        totalSum -= countS*values.get("S") + countT*values.get("T") + countX*values.get("X") + countY*values.get("Y") + countZ*values.get("Z");
+
+
         return totalSum;
     }
 
@@ -387,3 +398,4 @@ public class CheckoutSolution {
 
 
 }
+
