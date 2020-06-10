@@ -26,7 +26,7 @@ public class CheckoutSolution {
 //        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
 
 //       System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-//        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
 //        System.out.println("(B)(30)[" + checkout("B") + "]");
 //        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
 //        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
@@ -97,7 +97,7 @@ public class CheckoutSolution {
         }
 
 //        System.out.println(values);
-//        System.out.println(prices);
+            System.out.println(prices);
 //        System.out.println(sum);
 
 
@@ -114,69 +114,68 @@ public class CheckoutSolution {
         remainingProducts = simpleProduct(remainingProducts,"R");
         remainingProducts = simpleProduct(remainingProducts,"S");
         remainingProducts = simpleProduct(remainingProducts,"T");
-        remainingProducts = simpleProduct(remainingProducts,"W");
-        remainingProducts = simpleProduct(remainingProducts,"X");
-        remainingProducts = simpleProduct(remainingProducts,"Y");
-        remainingProducts = simpleProduct(remainingProducts,"Z");
+//        remainingProducts = simpleProduct(remainingProducts,"W");
+//        remainingProducts = simpleProduct(remainingProducts,"X");
+//        remainingProducts = simpleProduct(remainingProducts,"Y");
+//        remainingProducts = simpleProduct(remainingProducts,"Z");
 
 
-        //Special offers remove for 2E have 1 B
-        remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
-        prices.put("B", countSpecialProducts(remainingProducts,"B"));
-
-        // 3N get one M free
-        remainingProducts = offerMixedProducts(remainingProducts,"N",3,"M");
-        prices.put("M", countSpecialProducts(remainingProducts,"M"));
-
-        //3R get one Q free
-        remainingProducts = offerMixedProducts(remainingProducts,"R",3,"Q");
-        prices.put("Q", countSpecialProducts(remainingProducts,"Q"));
-
-
-        remainingProducts = simpleProduct(remainingProducts,"M");
-        remainingProducts = simpleProduct(remainingProducts,"Q");
-
-
+//        //Special offers remove for 2E have 1 B
+//        remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
+//        prices.put("B", countSpecialProducts(remainingProducts,"B"));
+//
+//        // 3N get one M free
+//        remainingProducts = offerMixedProducts(remainingProducts,"N",3,"M");
+//        prices.put("M", countSpecialProducts(remainingProducts,"M"));
+//
+//        //3R get one Q free
+//        remainingProducts = offerMixedProducts(remainingProducts,"R",3,"Q");
+//        prices.put("Q", countSpecialProducts(remainingProducts,"Q"));
+//
+//
+//        remainingProducts = simpleProduct(remainingProducts,"M");
+//        remainingProducts = simpleProduct(remainingProducts,"Q");
 
 
-        int countProdA = prices.get("A");
-        if(countProdA > 0 ) {
-            int countProd5A = prices.get("A") / 5;
-            if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
 
-            int countProd3A = countProdA / 3;
-            int countRestA = countProdA % 3;
-            sum.put("A", countProd5A*values.get("5A") + countProd3A * values.get("3A") + countRestA * values.get("A"));
-            System.out.println("======>A " + countProd5A + "--" + prices.get("A") + "--" + countProd3A + "--" + countRestA + "--------" + sum.get("A"));
-            remainingProducts = remainingProducts.replace("A", "");
-        }
 
-        int countProdB = prices.get("B");
-        if(countProdB > 0 ) {
+//        int countProdA = prices.get("A");
+//        if(countProdA > 0 ) {
+//            int countProd5A = prices.get("A") / 5;
+//            if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
+//
+//            int countProd3A = countProdA / 3;
+//            int countRestA = countProdA % 3;
+//            sum.put("A", countProd5A*values.get("5A") + countProd3A * values.get("3A") + countRestA * values.get("A"));
+//            System.out.println("======>A " + countProd5A + "--" + prices.get("A") + "--" + countProd3A + "--" + countRestA + "--------" + sum.get("A"));
+//            remainingProducts = remainingProducts.replace("A", "");
+//        }
 
-            int countProd2B = countProdB / 2;
-            int countRestB = countProdB % 2;
-            sum.put("B", countProdB * values.get("2B") + countProdB * values.get("B"));
-            System.out.println("======>B " + countProd5A + "--" + prices.get("A") + "--" + countProd3A + "--" + countRestA + "--------" + sum.get("A"));
-            remainingProducts = remainingProducts.replace("A", "");
-        }
+//        int countProdB = prices.get("B");
+//        if(countProdB > 0 ) {
+//            int countProd2B = countProdB / 2;
+//            int countRestB = countProdB % 2;
+//            sum.put("B", countProd2B * values.get("2B") + countRestB * values.get("B"));
+//            System.out.println("======>B " + countProd2B + "--" + countRestB + "--------" + sum.get("B"));
+//            remainingProducts = remainingProducts.replace("A", "");
+//        }
 
-        //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
-        int countProdF = prices.get("F");
-        if(countProdF > 0) {
-            sum.put("F",values.get("F") * countProdF);
-            sum.put("F", offerSameProduct("F", 2, sum.get("F")));
-            System.out.println("======>F " + sum.get("F"));
-            remainingProducts = remainingProducts.replace("F", "");
-        }
+//        //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
+//        int countProdF = prices.get("F");
+//        if(countProdF > 0) {
+//            sum.put("F",values.get("F") * countProdF);
+//            sum.put("F", offerSameProduct("F", 2, sum.get("F")));
+//            System.out.println("======>F " + sum.get("F"));
+//            remainingProducts = remainingProducts.replace("F", "");
+//        }
 
-        int countProdU = prices.get("U");
-        if(countProdU > 0) {
-            sum.put("U",values.get("U") * countProdU);
-            sum.put("U", offerSameProduct("U", 3, sum.get("U")));
-            System.out.println("======>U " + sum.get("U"));
-            remainingProducts = remainingProducts.replace("U", "");
-        }
+//        int countProdU = prices.get("U");
+//        if(countProdU > 0) {
+//            sum.put("U",values.get("U") * countProdU);
+//            sum.put("U", offerSameProduct("U", 3, sum.get("U")));
+//            System.out.println("======>U " + sum.get("U"));
+//            remainingProducts = remainingProducts.replace("U", "");
+//        }
 
 
         int totalSum = 0;
@@ -289,6 +288,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
