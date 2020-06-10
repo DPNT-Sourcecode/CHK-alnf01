@@ -74,6 +74,7 @@ public class CheckoutSolution {
 
         String remainingProducts = skus.trim().replace(" ","");
 
+        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
         Map<String,Integer> prices = new HashMap<>();
         for(String s: values.keySet()) {
             prices.put(s, countSpecialProducts(remainingProducts, s))  ;
@@ -97,8 +98,12 @@ public class CheckoutSolution {
         remainingProducts = offerMixedProducts(remainingProducts,"R",3,"Q");
         prices.put("Q", countSpecialProducts(remainingProducts,"Q"));
 
+        System.out.println(values);
         System.out.println(prices);
-        int countProdA = prices.get("A").intValue();
+        System.out.println(sum);
+
+
+        int countProdA = prices.get("A");
         if(countProdA > 0 ) {
             int countProd5A = prices.get("A") / 5;
             if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
@@ -110,7 +115,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("A", "");
         }
 
-        System.out.println("==>remainingProducts AFTER A[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts AFTER A[" + remainingProducts + "]");
         int countProdB = prices.get("B");
         if(countProdB > 0) {
             int countProd2B = countProdB / 2;
@@ -120,7 +125,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("B", "");
         }
 
-        System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
 
         int countProdC = prices.get("C");
         if(countProdC > 0) {
@@ -130,7 +135,7 @@ public class CheckoutSolution {
         }
 
 
-        System.out.println("==>remainingProducts AFTER C[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts AFTER C[" + remainingProducts + "]");
         int countProdD = prices.get("D");
         if(countProdD > 0) {
             sum.put("D", values.get("D") * countProdD);
@@ -138,7 +143,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("D", "");
         }
 
-        System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
         int countProdE = prices.get("E");
         if(countProdE > 0) {
             sum.put("E", values.get("E") * countProdE);
@@ -146,7 +151,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("E", "");
         }
 
-        System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
         int sumF = 0;
         int countProdF = prices.get("F");
         if(countProdF > 0) {
@@ -180,7 +185,7 @@ public class CheckoutSolution {
             }
         }
 
-        //System.out.println("----------------------->Product [" + product + "] - " + count + " times.");
+        System.out.println("----------------------->Product [" + product + "] - " + count + " times.");
         return count;
     }
 
@@ -232,7 +237,7 @@ public class CheckoutSolution {
     }
 
     public static String offerMixedProducts(String remainingProducts, String prodActivator, int prodFree, String prodFreeString) {
-        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
+        //System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
         int countProdActivator = countSpecialProducts(remainingProducts,prodActivator);
         int countFree = countProdActivator / prodFree;
         if(countFree > 0) {
@@ -256,6 +261,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
