@@ -3,7 +3,9 @@ package befaster.solutions.CHK;
 import befaster.runner.SolutionNotImplementedException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class CheckoutSolution {
@@ -20,8 +22,20 @@ public class CheckoutSolution {
     }
 
     public static Integer checkout(String skus) {
+        //validate
         if(skus==null || skus.isEmpty()) return -1;
         if(!chekcValidSku(skus)) return -1;
+
+        Map<String,Integer> values = new HashMap<>();
+        values.put("A", 50);
+        values.put("B", 30);
+        values.put("C", 20);
+        values.put("D", 15);
+        values.put("3A", 130);
+        values.put("2B", 45);
+
+
+
 
         return 0;
     }
@@ -34,7 +48,7 @@ public class CheckoutSolution {
         allowedChars.add("D");
 
         System.out.println("-->" + skus);
-        String skusReduced = skus.replace("3A","").replace("2B","");
+        String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
         System.out.println("-->" + skusReduced);
         for(int i=0; i< skusReduced.length(); i++) {
 
@@ -51,5 +65,6 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
