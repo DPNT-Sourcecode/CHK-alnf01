@@ -361,6 +361,7 @@ public class CheckoutSolution {
     public static int offerSameProduct(String product, int freeAtNumber,  int startingSum ) {
         int countFree = prices.get(product) / (freeAtNumber+1);
 
+        System.out.println(product + "--" + freeAtNumber + "--" + countFree + "--" + startingSum);
         for(int i=0;i<countFree;i++) {
             startingSum = startingSum - values.get(product);
         }
@@ -380,3 +381,4 @@ public class CheckoutSolution {
 
 
 }
+
