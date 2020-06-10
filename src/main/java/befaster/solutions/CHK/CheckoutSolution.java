@@ -301,6 +301,15 @@ public class CheckoutSolution {
         }
         System.out.println("(special bundle offer string)[" + stxyz + "]");
 
+        String zzzz, ssss, tttt, yyyy, xxxx = skus.trim().replace(" ","");;
+        for(String s: values.keySet()) {
+            if(!s.equals("Z")) {
+                zzzz = zzzz.replace(s, "");
+            }
+        }
+
+
+
         List<String> bundleOffers = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         for(int i=0; i< stxyz.length();i++) {
@@ -445,6 +454,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
