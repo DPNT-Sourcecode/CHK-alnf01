@@ -77,13 +77,21 @@ public class CheckoutSolution {
         System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
         Map<String,Integer> prices = new HashMap<>();
         for(String s: values.keySet()) {
-            prices.put(s, countSpecialProducts(remainingProducts, s))  ;
+            int count = countSpecialProducts(remainingProducts, s);
+            System.out.println("-->counter for [" + s + "]=[" + count + "]");
+            prices.put(s, count)  ;
+
+            System.out.println(prices.get(s));
         }
 
         Map<String,Integer> sum = new HashMap<>();
         for(String s: values.keySet()) {
             prices.put(s, 0)  ;
         }
+
+        //System.out.println(values);
+        System.out.println(prices);
+        //System.out.println(sum);
 
 
         //Special offers remove for 2E have 1 B
@@ -98,9 +106,7 @@ public class CheckoutSolution {
         remainingProducts = offerMixedProducts(remainingProducts,"R",3,"Q");
         prices.put("Q", countSpecialProducts(remainingProducts,"Q"));
 
-        System.out.println(values);
-        System.out.println(prices);
-        System.out.println(sum);
+
 
 
         int countProdA = prices.get("A");
@@ -185,7 +191,7 @@ public class CheckoutSolution {
             }
         }
 
-        System.out.println("----------------------->Product [" + product + "] - " + count + " times.");
+        //System.out.println("----------------------->Product [" + product + "] - " + count + " times.");
         return count;
     }
 
@@ -261,6 +267,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
