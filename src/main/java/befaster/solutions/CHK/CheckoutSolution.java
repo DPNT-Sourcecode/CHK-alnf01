@@ -34,9 +34,11 @@ public class CheckoutSolution {
         values.put("3A", 130);
         values.put("2B", 45);
 
+        int countProd3A = countSpecialProducts(skus,"3A");
+        int countProd2B = countSpecialProducts(skus,"2B");
 
-
-
+        String remainingProducts = skus.replace("3A","").replace("2B","").trim().replace(" ","");
+        
 
         return 0;
     }
@@ -55,6 +57,7 @@ public class CheckoutSolution {
             }
         }
 
+        System.out.println("Found product [" + product + "] - " + count + " times.");
         return count;
     }
 
@@ -65,13 +68,13 @@ public class CheckoutSolution {
         allowedChars.add("C");
         allowedChars.add("D");
 
-        System.out.println("-->" + skus);
+        //System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
-        System.out.println("-->" + skusReduced);
+        //System.out.println("-->" + skusReduced);
         for(int i=0; i< skusReduced.length(); i++) {
 
             char checkedString = skusReduced.charAt(i);
-            System.out.println("---->" + checkedString);
+            //System.out.println("---->" + checkedString);
             boolean containsChar = false;
             for(String s : allowedChars) {
                 //System.out.println("[" + s + "] vs [" + checkedString + "] [" + containsChar + "]");
@@ -83,6 +86,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
