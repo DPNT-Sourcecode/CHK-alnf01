@@ -160,13 +160,19 @@ public class CheckoutSolution {
         }
 
         //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
-        int sumF = 0;
         int countProdF = prices.get("F");
         if(countProdF > 0) {
-            sumF = values.get("F") * countProdF;
-            sum.put("F", offerSameProduct("F", 2, sumF, values, prices));
-            System.out.println("======>F " + sumF);
+            sum.put("F",values.get("F") * countProdF);
+            sum.put("F", offerSameProduct("F", 2, sum.get("F"), values, prices));
+            System.out.println("======>F " + sum.get("F"));
             remainingProducts = remainingProducts.replace("F", "");
+        }
+
+        int countProdG = prices.get("G");
+        if(countProdG > 0) {
+            sum.put("G", values.get("G") * countProdG);
+            System.out.println("======>G " + sum.get("G"));
+            remainingProducts = remainingProducts.replace("G", "");
         }
 
         int totalSum = 0;
@@ -269,5 +275,6 @@ public class CheckoutSolution {
 
 
 }
+
 
 
