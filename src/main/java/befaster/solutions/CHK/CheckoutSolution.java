@@ -44,11 +44,16 @@ public class CheckoutSolution {
 //        System.out.println("(HHHHHHHHHHH)(90)[" + checkout("HHHHHHHHHHH") + "]");
 //        System.out.println("(HHHHHHHHHHHHHHH)(125)[" + checkout("HHHHHHHHHHHHHHH") + "]");
 //        System.out.println("(HHHHHHHHHHHHHHHH)(135)[" + checkout("HHHHHHHHHHHHHHHH") + "]");
+//
+//        System.out.println("(P)(50)[" + checkout("P") + "]");
+//        System.out.println("(PPPPP)(200)[" + checkout("PPPPP") + "]");
+//        System.out.println("(PPPPPPPPPP)(400)[" + checkout("PPPPPPPPPP") + "]");
+//        System.out.println("(PPPPPPPPPPP)(450)[" + checkout("PPPPPPPPPPP") + "]");
 
-        System.out.println("(K)(80)[" + checkout("K") + "]");
-        System.out.println("(KK)(150)[" + checkout("KK") + "]");
-        System.out.println("(KKK)(230)[" + checkout("KKK") + "]");
-        System.out.println("(KKKK)(300)[" + checkout("KKKK") + "]");
+//        System.out.println("(K)(80)[" + checkout("K") + "]");
+//        System.out.println("(KK)(150)[" + checkout("KK") + "]");
+//        System.out.println("(KKK)(230)[" + checkout("KKK") + "]");
+//        System.out.println("(KKKK)(300)[" + checkout("KKKK") + "]");
 
         System.out.println("CHK_END");
     }
@@ -93,6 +98,7 @@ public class CheckoutSolution {
         values.put("10H", 80);
         values.put("5H", 45);
         values.put("2K", 150);
+        values.put("5P", 200);
 
         String remainingProducts = skus.trim().replace(" ","");
 
@@ -205,6 +211,15 @@ public class CheckoutSolution {
             sum.put("K", countProd2K * values.get("2K") + countRestK * values.get("K"));
             System.out.println("======>K " + countProd2K + "--" + countRestK + "--------" + sum.get("K"));
             remainingProducts = remainingProducts.replace("K", "");
+        }
+
+        int countProdP = prices.get("P");
+        if(countProdP > 0 ) {
+            int countProd5P = countProdP / 5;
+            int countRestP = countProdP % 5;
+            sum.put("P", countProd5P * values.get("5P") + countRestP * values.get("P"));
+            System.out.println("======>P " + countProd5P + "--" + countRestP + "--------" + sum.get("P"));
+            remainingProducts = remainingProducts.replace("P", "");
         }
 
         int countProdU = prices.get("U");
@@ -326,6 +341,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
