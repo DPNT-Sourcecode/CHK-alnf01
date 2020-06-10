@@ -9,19 +9,19 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-//    public static void main(String ...argv) {
-//        System.out.println("CHK_START");
-//        System.out.println("(null)[" + checkout(null) + "]");
-//        System.out.println("(Z)[" + checkout("Z") + "]");
-//        System.out.println("(AZ)[" + checkout("AZ") + "]");
-//        System.out.println("(AB)[" + checkout("AB") + "]");
-//        System.out.println("(AC3A2B)[" + checkout("AC3A2B") + "]");
-//        System.out.println("(AC3A2B0)[" + checkout("AC3A2B0") + "]");
-//
-//        System.out.println("CHK_END");
-//    }
+    public static void main(String ...argv) {
+        System.out.println("CHK_START");
+        System.out.println("(null)[" + checkout(null) + "]");
+        System.out.println("(Z)[" + checkout("Z") + "]");
+        System.out.println("(AZ)[" + checkout("AZ") + "]");
+        System.out.println("(AB)[" + checkout("AB") + "]");
+        System.out.println("(AC3A2B)[" + checkout("AC3A2B") + "]");
+        System.out.println("(AC3A2B0)[" + checkout("AC3A2B0") + "]");
 
-    public  Integer checkout(String skus) {
+        System.out.println("CHK_END");
+    }
+
+    public static Integer checkout(String skus) {
         //validate
         if(skus==null) return -1;
         if(!chekcValidSku(skus)) return -1;
@@ -42,12 +42,13 @@ public class CheckoutSolution {
         int countProd3A = countProdA/3;
         int countRestA = countProdA%3;
         int sumA = countProd3A*values.get("3A") + countRestA*values.get("A");
-
-
         remainingProducts = remainingProducts.replace("A","");
 
         System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdB = countSpecialProducts(remainingProducts,"B");
+        int countProd2B = countProdB/2;
+        int countRestB = countProdA%2;
+        int sumB = countProd2B*values.get("2B") + countRestA*values.get("B");
         remainingProducts = remainingProducts.replace("B","");
 
         System.out.println("==>remainingProducts [" + remainingProducts + "]");
@@ -59,8 +60,7 @@ public class CheckoutSolution {
         remainingProducts = remainingProducts.replace("D","");
 
         int sum =0;
-        sum = values.get("A") * countProdA;
-        sum += values.get("B") * countProdB;
+        sum = sumA + sumB;
         sum += values.get("C") * countProdC;
         sum += values.get("D") * countProdD;
 
@@ -112,3 +112,4 @@ public class CheckoutSolution {
         return true;
     }
 }
+
