@@ -72,6 +72,10 @@ public class CheckoutSolution {
         values.put("2B", 45);
 
         String remainingProducts = skus.trim().replace(" ","");
+        Map<String,Integer> prices = new HashMap<>();
+        values.forEach((k,v) -> {
+            prices.put(k,countSpecialProducts(remainingProducts,v));
+        });
 
         int countProdA = countSpecialProducts(remainingProducts,"A");
 
@@ -232,6 +236,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
