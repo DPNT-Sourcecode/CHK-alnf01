@@ -131,7 +131,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("F", "");
         }
 
-        int sum = sumA + sumB + sumC + sumD + sumE;
+        int sum = sumA + sumB + sumC + sumD + sumE + sumF;
 
 
         System.out.println("SUM ("+skus+") = [" + sum + "]");
@@ -186,6 +186,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
