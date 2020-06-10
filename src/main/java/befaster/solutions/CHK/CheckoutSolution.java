@@ -94,7 +94,7 @@ public class CheckoutSolution {
         values.put("H", 10);
         values.put("I", 35);
         values.put("J", 60);
-        values.put("K", 80);
+        values.put("K", 70);
         values.put("L", 90);
         values.put("M", 15);
         values.put("N", 40);
@@ -102,21 +102,21 @@ public class CheckoutSolution {
         values.put("P", 50);
         values.put("Q", 30);
         values.put("R", 50);
-        values.put("S", 30);
+        values.put("S", 20);
         values.put("T", 20);
         values.put("U", 40);
         values.put("V", 50);
         values.put("W", 20);
-        values.put("X", 90);
-        values.put("Y", 10);
-        values.put("Z", 50);
+        values.put("X", 17);
+        values.put("Y", 20);
+        values.put("Z", 21);
         values.put("3A", 130);
         values.put("3Q", 80);
         values.put("5A", 200);
         values.put("2B", 45);
         values.put("10H", 80);
         values.put("5H", 45);
-        values.put("2K", 150);
+        values.put("2K", 120);
         values.put("5P", 200);
         values.put("2V", 90);
         values.put("3V", 130);
@@ -398,4 +398,5 @@ public class CheckoutSolution {
 
 
 }
+
 
