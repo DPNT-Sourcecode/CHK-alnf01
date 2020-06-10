@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class CheckoutSolution {
 
+
     public static void main(String ...argv) {
         System.out.println("CHK_START");
 //        checkout("E");
@@ -75,10 +76,11 @@ public class CheckoutSolution {
         String remainingProducts = skus.trim().replace(" ","");
 
         System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
+
         Map<String,Integer> prices = new HashMap<>();
         for(String s: values.keySet()) {
             int count = countSpecialProducts(remainingProducts, s);
-            System.out.println("-->counter for [" + s + "]=[" + count + "]");
+            //System.out.println("-->counter for [" + s + "]=[" + count + "]");
             prices.put(s, count)  ;
 
             //System.out.println(prices.get(s));
@@ -86,12 +88,12 @@ public class CheckoutSolution {
 
         Map<String,Integer> sum = new HashMap<>();
         for(String s: values.keySet()) {
-            prices.put(s, 0)  ;
+            sum.put(s, 0)  ;
         }
 
-        //System.out.println(values);
+        System.out.println(values);
         System.out.println(prices);
-        //System.out.println(sum);
+        System.out.println(sum);
 
 
         //Special offers remove for 2E have 1 B
@@ -267,3 +269,4 @@ public class CheckoutSolution {
 
 
 }
+
