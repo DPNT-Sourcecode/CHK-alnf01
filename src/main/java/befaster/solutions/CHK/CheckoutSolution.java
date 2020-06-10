@@ -14,67 +14,68 @@ public class CheckoutSolution {
     private static Map<String,Integer> prices = new HashMap<>();
     private static Map<String,Integer> sum = new HashMap<>();
 
-//    public static void main(String ...argv) {
-//        System.out.println("CHK_START");
-////        checkout("E");
-////        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
-////          System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
+    public static void main(String ...argv) {
+        System.out.println("CHK_START");
+//        checkout("E");
+//        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
+//          System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
 //        System.out.println("(EEEB)(120)[" + checkout("EEEB") + "]\n\n");
-////        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
-////        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
-////        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
-////        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
-//
-////       System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-////        System.out.println("(BBBB)(90)[" + checkout("BBBB") + "]");
-////        System.out.println("(B)(30)[" + checkout("B") + "]");
-////        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-////        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
-////        System.out.println("(F)(10)[" + checkout("F") + "]\n\n");
-////        System.out.println("(FF)(20)[" + checkout("FF") + "]\n\n");
-////        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
-////        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
-//
-////        System.out.println("(CCDD)(35)[" + checkout("CCDD") +
-//        //System.out.println("(CDGIJ)(150)[" + checkout("CDGIJ") + "]");
-//
-////        System.out.println("(H)(10)[" + checkout("H") + "]");
-////        System.out.println("(HHHHH)(45)[" + checkout("HHHHH") + "]");
-////        System.out.println("(HHHHHHHHHH)(80)[" + checkout("HHHHHHHHHH") + "]");
-////        System.out.println("(HHHHHHHHHHH)(90)[" + checkout("HHHHHHHHHHH") + "]");
-////        System.out.println("(HHHHHHHHHHHHHHH)(125)[" + checkout("HHHHHHHHHHHHHHH") + "]");
-////        System.out.println("(HHHHHHHHHHHHHHHH)(135)[" + checkout("HHHHHHHHHHHHHHHH") + "]");
-////
-////        System.out.println("(P)(50)[" + checkout("P") + "]");
-////        System.out.println("(PPPPP)(200)[" + checkout("PPPPP") + "]");
-////        System.out.println("(PPPPPPPPPP)(400)[" + checkout("PPPPPPPPPP") + "]");
-////        System.out.println("(PPPPPPPPPPP)(450)[" + checkout("PPPPPPPPPPP") + "]");
-//
-////        System.out.println("(K)(80)[" + checkout("K") + "]");
-////        System.out.println("(KK)(150)[" + checkout("KK") + "]");
-////        System.out.println("(KKK)(230)[" + checkout("KKK") + "]");
-////        System.out.println("(KKKK)(300)[" + checkout("KKKK") + "]");
-//
-//
-////        System.out.println("(Q)(30)[" + checkout("Q") + "]");
-////        System.out.println("(QQQ)(80)[" + checkout("QQQ") + "]");
-////        System.out.println("(QQQQ)(110)[" + checkout("QQQQ") + "]");
-////
-////        System.out.println("(V)(50)[" + checkout("V") + "]");
-////        System.out.println("(VV)(90)[" + checkout("VV") + "]");
-////        System.out.println("(VVV)(130)[" + checkout("VVV") + "]");
-////        System.out.println("(VVVV)(180)[" + checkout("VVVV") + "]");
-//
-////        System.out.println("(U)(40)[" + checkout("U") + "]\n\n");
-////        System.out.println("(UUU)(120)[" + checkout("UUU") + "]\n\n");
-////        System.out.println("(UUUU)(120)[" + checkout("UUUU") + "]\n\n");
-////        System.out.println("(UUUUUU)(200)[" + checkout("UUUUUU") + "]\n\n");
-//        System.out.println("CHK_END");
-//
-//
-//    }
+//        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
+//        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
+//        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
+//        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
 
-    public Integer checkout(String skus) {
+//       System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+//        System.out.println("(BBBB)(90)[" + checkout("BBBB") + "]");
+//        System.out.println("(B)(30)[" + checkout("B") + "]");
+//        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
+//        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+//        System.out.println("(F)(10)[" + checkout("F") + "]\n\n");
+//        System.out.println("(FF)(20)[" + checkout("FF") + "]\n\n");
+//        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
+//        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
+
+//        System.out.println("(CCDD)(35)[" + checkout("CCDD") +
+        //System.out.println("(CDGIJ)(150)[" + checkout("CDGIJ") + "]");
+
+//        System.out.println("(H)(10)[" + checkout("H") + "]");
+//        System.out.println("(HHHHH)(45)[" + checkout("HHHHH") + "]");
+//        System.out.println("(HHHHHHHHHH)(80)[" + checkout("HHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHH)(90)[" + checkout("HHHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHHHHHH)(125)[" + checkout("HHHHHHHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHHHHHHH)(135)[" + checkout("HHHHHHHHHHHHHHHH") + "]");
+//
+//        System.out.println("(P)(50)[" + checkout("P") + "]");
+//        System.out.println("(PPPPP)(200)[" + checkout("PPPPP") + "]");
+//        System.out.println("(PPPPPPPPPP)(400)[" + checkout("PPPPPPPPPP") + "]");
+//        System.out.println("(PPPPPPPPPPP)(450)[" + checkout("PPPPPPPPPPP") + "]");
+
+//        System.out.println("(K)(80)[" + checkout("K") + "]");
+//        System.out.println("(KK)(150)[" + checkout("KK") + "]");
+//        System.out.println("(KKK)(230)[" + checkout("KKK") + "]");
+//        System.out.println("(KKKK)(300)[" + checkout("KKKK") + "]");
+
+
+//        System.out.println("(Q)(30)[" + checkout("Q") + "]");
+//        System.out.println("(QQQ)(80)[" + checkout("QQQ") + "]");
+//        System.out.println("(QQQQ)(110)[" + checkout("QQQQ") + "]");
+//
+
+
+//        System.out.println("(U)(40)[" + checkout("U") + "]\n\n");
+//        System.out.println("(UUU)(120)[" + checkout("UUU") + "]\n\n");
+//        System.out.println("(UUUU)(120)[" + checkout("UUUU") + "]\n\n");
+//        System.out.println("(UUUUUU)(200)[" + checkout("UUUUUU") + "]\n\n");
+
+        System.out.println("(V)(50)[" + checkout("V") + "]");
+
+
+        System.out.println("CHK_END");
+
+
+    }
+
+    public static Integer checkout(String skus) {
         //validate
         System.out.println("{"+skus+"}");
         if(skus==null) return -1;
@@ -384,6 +385,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
