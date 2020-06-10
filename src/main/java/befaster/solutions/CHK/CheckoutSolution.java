@@ -317,14 +317,19 @@ public class CheckoutSolution {
 
         int bundleOfferSum =0;
         int bundleOfferRest = 0;
+        List<String> bundleOfferCopy = new ArrayList<>();
+        for(int i=0;i<bundleOffers.size();i++) {
+            bundleOfferCopy.add(bundleOffers.get(i));
+        }
+
         for(int i=0;i<bundleOffers.size();i++) {
             if(bundleOffers.get(i).length()==3) {
                 bundleOfferSum+=45;
-                bundleOffers.remove(i);
+                bundleOfferCopy.remove(bundleOffers.get(i));
             }
         }
         System.out.println(bundleOfferSum);
-        System.out.println(bundleOffers);
+        System.out.println(bundleOfferCopy);
 
 
         return totalSum;
@@ -431,3 +436,4 @@ public class CheckoutSolution {
 
 
 }
+
