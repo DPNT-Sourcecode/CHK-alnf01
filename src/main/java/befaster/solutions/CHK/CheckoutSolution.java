@@ -11,12 +11,12 @@ import java.util.Map;
 public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
-        System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
-        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
-        System.out.println("(B)(30)[" + checkout("B") + "]");
+        //System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
+        //System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+        //System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+        //System.out.println("(B)(30)[" + checkout("B") + "]");
         System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+        //System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
 
         System.out.println("CHK_END");
     }
@@ -42,8 +42,8 @@ public class CheckoutSolution {
         int countProdA = countSpecialProducts(remainingProducts,"A");
         int countProd3A = countProdA/3;
         int countRestA = countProdA%3;
-        System.out.println("======>A " + countProdA + "--" + countProd3A + "--" + countRestA);
         int sumA = countProd3A*values.get("3A") + countRestA*values.get("A");
+        System.out.println("======>A " + countProdA + "--" + countProd3A + "--" + countRestA + "--------" + sumA);
         remainingProducts = remainingProducts.replace("A","");
 
         //System.out.println("==>remainingProducts [" + remainingProducts + "]");
@@ -114,6 +114,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
