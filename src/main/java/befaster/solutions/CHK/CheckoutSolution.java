@@ -38,10 +38,11 @@ public class CheckoutSolution {
         System.out.println("-->" + skusReduced);
         for(int i=0; i< skusReduced.length(); i++) {
 
-            String checkedString = skusReduced.substring(i);
+            String checkedString = skusReduced.substring(i,1);
             System.out.println("---->" + checkedString);
             boolean containsChar = false;
             for(String s : allowedChars) {
+                //System.out.println("[" + s + "] vs [" + checkedString + "] [" + containsChar + "]");
                 if(s.equals(checkedString)) containsChar=true;
             }
             if(!containsChar) return false;
@@ -50,3 +51,4 @@ public class CheckoutSolution {
         return true;
     }
 }
+
