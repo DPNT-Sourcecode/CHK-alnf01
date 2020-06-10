@@ -9,19 +9,19 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-    public static void main(String ...argv) {
-        System.out.println("CHK_START");
-        System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
-        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
-        System.out.println("(B)(30)[" + checkout("B") + "]");
-        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+//    public static void main(String ...argv) {
+//        System.out.println("CHK_START");
+//        System.out.println("(AAABB)(210)[" + checkout("AAABB") + "]");
+//        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+//        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+//        System.out.println("(B)(30)[" + checkout("B") + "]");
+//        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
+//        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+//
+//        System.out.println("CHK_END");
+//    }
 
-        System.out.println("CHK_END");
-    }
-
-    public static Integer checkout(String skus) {
+    public  Integer checkout(String skus) {
         //validate
         System.out.println("{"+skus+"}");
         if(skus==null) return -1;
@@ -116,6 +116,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
