@@ -15,6 +15,8 @@ public class CheckoutSolution {
         System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
         System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
         System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
+        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
+        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBBB") + "]\n\n");
 
 //        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
 //        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
@@ -45,20 +47,21 @@ public class CheckoutSolution {
         String remainingProducts = skus.trim().replace(" ","");
 
         int countProdA = countSpecialProducts(remainingProducts,"A");
-        int countProdB = countSpecialProducts(remainingProducts,"B");
+
         int countProdC = countSpecialProducts(remainingProducts,"C");
         int countProdD = countSpecialProducts(remainingProducts,"D");
         int countProdE = countSpecialProducts(remainingProducts,"E");
 
         //Special offers remove stringssss for 2E remove on B
+        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
         int countBFree = countProdE / 2;
         if(countBFree > 0) {
             for(int i=0; i< countBFree; i++) {
                 remainingProducts = remainingProducts.replaceFirst("B","");
             }
         }
-
-        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        int countProdB = countSpecialProducts(remainingProducts,"B");
+        System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
 
         int sumA =0 ;
         if(countProdA > 0 ) {
@@ -72,7 +75,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("A", "");
         }
 
-        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        System.out.println("==>remainingProducts AFTER A[" + remainingProducts + "]");
         int sumB = 0;
         if(countProdB > 0) {
             int countProd2B = countProdB / 2;
@@ -82,7 +85,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("B", "");
         }
 
-        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
 
         int sumC = 0;
         if(countProdC > 0) {
@@ -92,7 +95,7 @@ public class CheckoutSolution {
         }
 
 
-        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        System.out.println("==>remainingProducts AFTER C[" + remainingProducts + "]");
         int sumD = 0;
         if(countProdD > 0) {
             sumD = values.get("D") * countProdD;
@@ -100,7 +103,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("D", "");
         }
 
-        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
         int sumE = 0;
         if(countProdE > 0) {
             sumE = values.get("E") * countProdE;
@@ -162,6 +165,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
