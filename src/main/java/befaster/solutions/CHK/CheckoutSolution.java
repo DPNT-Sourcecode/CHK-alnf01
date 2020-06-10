@@ -9,19 +9,19 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-    public static void main(String ...argv) {
-        System.out.println("CHK_START");
-        System.out.println("(null)[" + checkout(null) + "]");
-        System.out.println("(Z)[" + checkout("Z") + "]");
-        System.out.println("(AZ)[" + checkout("AZ") + "]");
-        System.out.println("(AB)[" + checkout("AB") + "]");
-        System.out.println("(AC3A2B)[" + checkout("AC3A2B") + "]");
-        System.out.println("(AC3A2B0)[" + checkout("AC3A2B0") + "]");
+//    public static void main(String ...argv) {
+//        System.out.println("CHK_START");
+//        System.out.println("(null)[" + checkout(null) + "]");
+//        System.out.println("(Z)[" + checkout("Z") + "]");
+//        System.out.println("(AZ)[" + checkout("AZ") + "]");
+//        System.out.println("(AB)[" + checkout("AB") + "]");
+//        System.out.println("(AC3A2B)[" + checkout("AC3A2B") + "]");
+//        System.out.println("(AC3A2B0)[" + checkout("AC3A2B0") + "]");
+//
+//        System.out.println("CHK_END");
+//    }
 
-        System.out.println("CHK_END");
-    }
-
-    public static Integer checkout(String skus) {
+    public  Integer checkout(String skus) {
         //validate
         if(skus==null || skus.isEmpty()) return -1;
         if(!chekcValidSku(skus)) return -1;
@@ -63,6 +63,7 @@ public class CheckoutSolution {
         sum += values.get("3A") * countProd3A;
         sum += values.get("2B") * countProd2B;
 
+        System.out.println("========>SUM [" + sum + "]");
         return sum;
     }
 
@@ -109,6 +110,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
