@@ -35,6 +35,7 @@ public class CheckoutSolution {
 //        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
 //        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
 
+//        System.out.println("(CCDD)(35)[" + checkout("CCDD") + "]");
         System.out.println("CHK_END");
     }
 
@@ -99,6 +100,14 @@ public class CheckoutSolution {
 //        System.out.println(sum);
 
 
+        //Simple products
+        remainingProducts = simpleProduct(remainingProducts,"C");
+        remainingProducts = simpleProduct(remainingProducts,"D");
+        remainingProducts = simpleProduct(remainingProducts,"G");
+        remainingProducts = simpleProduct(remainingProducts,"I");
+        remainingProducts = simpleProduct(remainingProducts,"J");
+
+
         //Special offers remove for 2E have 1 B
         remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
         prices.put("B", countSpecialProducts(remainingProducts,"B"));
@@ -138,21 +147,9 @@ public class CheckoutSolution {
 
         //System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
 
-        int countProdC = prices.get("C");
-        if(countProdC > 0) {
-            sum.put("C", values.get("C") * countProdC);
-            System.out.println("======>C " + sum.get("C"));
-            remainingProducts = remainingProducts.replace("C", "");
-        }
 
 
-        //System.out.println("==>remainingProducts AFTER C[" + remainingProducts + "]");
-        int countProdD = prices.get("D");
-        if(countProdD > 0) {
-            sum.put("D", values.get("D") * countProdD);
-            System.out.println("======>D " + sum.get("D"));
-            remainingProducts = remainingProducts.replace("D", "");
-        }
+
 
         //System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
         int countProdE = prices.get("E");
@@ -171,12 +168,6 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("F", "");
         }
 
-        int countProdG = prices.get("G");
-        if(countProdG > 0) {
-            sum.put("G", values.get("G") * countProdG);
-            System.out.println("======>G " + sum.get("G"));
-            remainingProducts = remainingProducts.replace("G", "");
-        }
 
         int totalSum = 0;
         for(Integer v : sum.values()) {
@@ -288,6 +279,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
