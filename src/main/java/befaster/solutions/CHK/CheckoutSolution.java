@@ -37,7 +37,25 @@ public class CheckoutSolution {
 
 
 
+
         return 0;
+    }
+
+    public static int countSpecialProducts(String skus, String product) {
+        int lastIndex=0;
+        int count = 0;
+
+        while(lastIndex != -1){
+
+            lastIndex = skus.indexOf(product,lastIndex);
+
+            if(lastIndex != -1){
+                count ++;
+                lastIndex += product.length();
+            }
+        }
+
+        return count;
     }
 
     public static boolean chekcValidSku(String skus) {
@@ -65,6 +83,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
