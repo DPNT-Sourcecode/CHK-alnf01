@@ -42,6 +42,7 @@ public class CheckoutSolution {
         int countProdA = countSpecialProducts(remainingProducts,"A");
         int countProd3A = countProdA/3;
         int countRestA = countProdA%3;
+        System.out.println("======>A " + countProdA + "--" + countProd3A + "--" + countRestA);
         int sumA = countProd3A*values.get("3A") + countRestA*values.get("A");
         remainingProducts = remainingProducts.replace("A","");
 
@@ -113,5 +114,6 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
