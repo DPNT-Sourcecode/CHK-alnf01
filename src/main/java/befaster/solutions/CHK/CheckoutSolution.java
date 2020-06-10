@@ -55,7 +55,15 @@ public class CheckoutSolution {
         int countProdD = countSpecialProducts(remainingProducts,"D");
         remainingProducts = remainingProducts.replace("D","");
 
-        return 0;
+        int sum =0;
+        sum = values.get("A") * countProdA;
+        sum += values.get("B") * countProdB;
+        sum += values.get("C") * countProdC;
+        sum += values.get("D") * countProdD;
+        sum += values.get("3A") * countProd3A;
+        sum += values.get("2B") * countProd2B;
+
+        return sum;
     }
 
     public static int countSpecialProducts(String skus, String product) {
@@ -101,6 +109,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
