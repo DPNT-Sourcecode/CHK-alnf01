@@ -9,30 +9,35 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-//    public static void main(String ...argv) {
-//        System.out.println("CHK_START");
-////        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
-////        System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
-////        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
-////        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
-////        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
-////        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
-////        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
-//
-////        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
-////        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
-////        System.out.println("(B)(30)[" + checkout("B") + "]");
-////        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
-////        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
-////        System.out.println("(F)(10)[" + checkout("F") + "]\n\n");
-////        System.out.println("(FF)(20)[" + checkout("FF") + "]\n\n");
-////        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
-////        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
-//
-//        System.out.println("CHK_END");
-//    }
+    private Map<String,Integer> values = new HashMap<>();
 
-    public  Integer checkout(String skus) {
+
+
+
+    public static void main(String ...argv) {
+        System.out.println("CHK_START");
+//        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
+        System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
+        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
+        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
+        System.out.println("(EE BBB)(125)[" + checkout("EEBBB") + "]\n\n");
+        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
+        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
+
+//        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+//        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
+//        System.out.println("(B)(30)[" + checkout("B") + "]");
+//        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
+//        System.out.println("(ABCD)(115)[" + checkout("AC3A2B0") + "]");
+//        System.out.println("(F)(10)[" + checkout("F") + "]\n\n");
+//        System.out.println("(FF)(20)[" + checkout("FF") + "]\n\n");
+//        System.out.println("(FFF)(20)[" + checkout("FFF") + "]\n\n");
+//        System.out.println("(FFFF)(30)[" + checkout("FFFF") + "]\n\n");
+
+        System.out.println("CHK_END");
+    }
+
+    public static Integer checkout(String skus) {
         //validate
         System.out.println("{"+skus+"}");
         if(skus==null) return -1;
@@ -59,15 +64,7 @@ public class CheckoutSolution {
         int countProdE = countSpecialProducts(remainingProducts,"E");
         int countProdF = countSpecialProducts(remainingProducts,"F");
 
-        //Special offers remove stringssss for 2E remove on B
-//        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
-//        int countBFree = countProdE / 2;
-//        if(countBFree > 0) {
-//            for(int i=0; i< countBFree; i++) {
-//                remainingProducts = remainingProducts.replaceFirst("B","");
-//                System.out.println("==>remainingProducts AFTER E -- "+ i + " [" + remainingProducts + "]");
-//            }
-//        }
+        //Special offers remove for 2E have 1 B
         remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
         int countProdB = countSpecialProducts(remainingProducts,"B");
 
@@ -184,7 +181,7 @@ public class CheckoutSolution {
         return true;
     }
 
-    public String offerMixedProducts(String remainingProducts, String prodActivator, int prodFree, String prodFreeString) {
+    public static String offerMixedProducts(String remainingProducts, String prodActivator, int prodFree, String prodFreeString) {
         System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
         int countProdActivator = countSpecialProducts(remainingProducts,prodActivator);
         int countFree = countProdActivator / prodFree;
@@ -199,4 +196,5 @@ public class CheckoutSolution {
 
 
 }
+
 
