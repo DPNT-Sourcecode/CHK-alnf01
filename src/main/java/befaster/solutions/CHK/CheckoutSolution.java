@@ -38,7 +38,12 @@ public class CheckoutSolution {
 //        System.out.println("(CCDD)(35)[" + checkout("CCDD") +
         //System.out.println("(CDGIJ)(150)[" + checkout("CDGIJ") + "]");
 
-        System.out.println("(H)(10)[" + checkout("H");
+//        System.out.println("(H)(10)[" + checkout("H") + "]");
+//        System.out.println("(HHHHH)(45)[" + checkout("HHHHH") + "]");
+//        System.out.println("(HHHHHHHHHH)(80)[" + checkout("HHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHH)(90)[" + checkout("HHHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHHHHHH)(125)[" + checkout("HHHHHHHHHHHHHHH") + "]");
+//        System.out.println("(HHHHHHHHHHHHHHHH)(135)[" + checkout("HHHHHHHHHHHHHHHH") + "]");
         System.out.println("CHK_END");
     }
 
@@ -186,6 +191,15 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("H", "");
         }
 
+        int countProdK = prices.get("K");
+        if(countProdK > 0 ) {
+            int countProd2K = countProdK / 2;
+            int countRestK = countProdK % 2;
+            sum.put("K", countProd2K * values.get("2K") + countRestK * values.get("K"));
+            System.out.println("======>K " + countProd2K + "--" + countRestK + "--------" + sum.get("K"));
+            remainingProducts = remainingProducts.replace("K", "");
+        }
+
         int countProdU = prices.get("U");
         if(countProdU > 0) {
             sum.put("U",values.get("U") * countProdU);
@@ -305,4 +319,5 @@ public class CheckoutSolution {
 
 
 }
+
 
