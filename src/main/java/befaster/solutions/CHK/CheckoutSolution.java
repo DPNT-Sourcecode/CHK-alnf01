@@ -22,7 +22,7 @@ public class CheckoutSolution {
 //        System.out.println("(EEEE BB)(160)[" + checkout("EEEEBB") + "]\n\n");
 //        System.out.println("(EEEE BBBB)(205)[" + checkout("EEEEBBBB") + "]\n\n");
 
-       System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
+//       System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
 //        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
 //        System.out.println("(B)(30)[" + checkout("B") + "]");
 //        System.out.println("(AAAA)(200)[" + checkout("AAAA") + "]");
@@ -91,9 +91,9 @@ public class CheckoutSolution {
             sum.put(s, 0)  ;
         }
 
-        System.out.println(values);
-        System.out.println(prices);
-        System.out.println(sum);
+//        System.out.println(values);
+//        System.out.println(prices);
+//        System.out.println(sum);
 
 
         //Special offers remove for 2E have 1 B
@@ -164,7 +164,7 @@ public class CheckoutSolution {
         int countProdF = prices.get("F");
         if(countProdF > 0) {
             sumF = values.get("F") * countProdF;
-            sumF = offerSameProduct("F", 2, sumF, values, prices);
+            sum.put("F", offerSameProduct("F", 2, sumF, values, prices));
             System.out.println("======>F " + sumF);
             remainingProducts = remainingProducts.replace("F", "");
         }
@@ -269,4 +269,5 @@ public class CheckoutSolution {
 
 
 }
+
 
