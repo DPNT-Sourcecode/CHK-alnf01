@@ -44,6 +44,12 @@ public class CheckoutSolution {
 //        System.out.println("(HHHHHHHHHHH)(90)[" + checkout("HHHHHHHHHHH") + "]");
 //        System.out.println("(HHHHHHHHHHHHHHH)(125)[" + checkout("HHHHHHHHHHHHHHH") + "]");
 //        System.out.println("(HHHHHHHHHHHHHHHH)(135)[" + checkout("HHHHHHHHHHHHHHHH") + "]");
+
+        System.out.println("(K)(80)[" + checkout("K") + "]");
+        System.out.println("(KK)(150)[" + checkout("KK") + "]");
+        System.out.println("(KKK)(230)[" + checkout("KKK") + "]");
+        System.out.println("(KKKK)(300)[" + checkout("KKKK") + "]");
+
         System.out.println("CHK_END");
     }
 
@@ -86,6 +92,7 @@ public class CheckoutSolution {
         values.put("2B", 45);
         values.put("10H", 80);
         values.put("5H", 45);
+        values.put("2K", 150);
 
         String remainingProducts = skus.trim().replace(" ","");
 
@@ -319,5 +326,6 @@ public class CheckoutSolution {
 
 
 }
+
 
 
