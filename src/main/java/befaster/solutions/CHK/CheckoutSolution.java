@@ -75,7 +75,7 @@ public class CheckoutSolution {
         String remainingProducts = skus.trim().replace(" ","");
 
         Map<String,Integer> prices = new HashMap<>();
-        for(String s: prices.keySet()) {
+        for(String s: values.keySet()) {
             prices.put(s, countSpecialProducts(remainingProducts, s))  ;
         }
 
@@ -84,15 +84,15 @@ public class CheckoutSolution {
         remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
         prices.put("B", countSpecialProducts(remainingProducts,"B"));
 
-
+        System.out.println(prices);
         int sumA =0 ;
-        int countProdA = prices.get("A");
+        int countProdA = prices.get("A").intValue();
         if(countProdA > 0 ) {
             int countProd5A = prices.get("A") / 5;
-            if (countProd5A > 0)countProdA = countProdA - countProd5A*5);
+            if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
 
-            int countProd3A = prices.get("A") / 3;
-            int countRestA = prices.get("A") % 3;
+            int countProd3A = countProdA / 3;
+            int countRestA = countProdA % 3;
             sumA = countProd5A*values.get("5A") + countProd3A * values.get("3A") + countRestA * values.get("A");
             System.out.println("======>A " + countProd5A + "--" + prices.get("A") + "--" + countProd3A + "--" + countRestA + "--------" + sumA);
             remainingProducts = remainingProducts.replace("A", "");
@@ -239,4 +239,5 @@ public class CheckoutSolution {
 
 
 }
+
 
