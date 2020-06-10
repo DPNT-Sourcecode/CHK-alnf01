@@ -331,13 +331,15 @@ public class CheckoutSolution {
         System.out.println(bundleOfferSum);
         System.out.println(bundleOfferCopy);
 
-        String offerRest = bundleOfferCopy.get(0);
-        for(int i=0;i<offerRest.length();i++) {
-            StringBuilder sbb = new StringBuilder();
-            sbb.append(offerRest.charAt(i));
-            bundleOfferRest += values.get(sbb.toString());
+        if(bundleOfferCopy!=null && !bundleOfferCopy.isEmpty()) {
+            String offerRest = bundleOfferCopy.get(0);
+            for (int i = 0; i < offerRest.length(); i++) {
+                StringBuilder sbb = new StringBuilder();
+                sbb.append(offerRest.charAt(i));
+                bundleOfferRest += values.get(sbb.toString());
+            }
+            System.out.println(bundleOfferRest);
         }
-        System.out.println(bundleOfferRest);
 
         return totalSum + bundleOfferSum + bundleOfferRest;
     }
@@ -443,6 +445,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
