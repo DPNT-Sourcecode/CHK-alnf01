@@ -21,7 +21,7 @@ public class CheckoutSolution {
         System.out.println("CHK_END");
     }
 
-    public  Integer checkout(String skus) {
+    public static Integer checkout(String skus) {
         //validate
         System.out.println("{"+skus+"}");
         if(skus==null) return -1;
@@ -33,7 +33,9 @@ public class CheckoutSolution {
         values.put("B", 30);
         values.put("C", 20);
         values.put("D", 15);
+        values.put("E", 40);
         values.put("3A", 130);
+        values.put("5A", 200);
         values.put("2B", 45);
 
         String remainingProducts = skus.trim().replace(" ","");
@@ -97,6 +99,7 @@ public class CheckoutSolution {
         allowedChars.add("B");
         allowedChars.add("C");
         allowedChars.add("D");
+        allowedChars.add("E");
 
         //System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
@@ -115,4 +118,8 @@ public class CheckoutSolution {
 
         return true;
     }
+
+
+
 }
+
