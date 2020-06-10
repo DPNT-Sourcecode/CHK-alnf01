@@ -39,6 +39,11 @@ public class CheckoutSolution {
 
         System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdA = countSpecialProducts(remainingProducts,"A");
+        int countProd3A = countProdA/3;
+        int countRestA = countProdA%3;
+        int sumA = countProd3A*values.get("3A") + countRestA*values.get("A");
+
+
         remainingProducts = remainingProducts.replace("A","");
 
         System.out.println("==>remainingProducts [" + remainingProducts + "]");
@@ -107,12 +112,3 @@ public class CheckoutSolution {
         return true;
     }
 }
-
-
-
-
-
-
-
-
-
