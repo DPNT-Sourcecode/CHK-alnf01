@@ -68,7 +68,7 @@ public class CheckoutSolution {
 //        System.out.println("(UUUUUU)(200)[" + checkout("UUUUUU") + "]\n\n");
 
 //        System.out.println("(V)(50)[" + checkout("V") + "]");
-        System.out.println("(STSXXYZZZANHFTYDTSXXYYZZTTREWWW)(?)[" + checkout("STSXXYZZZANHFTYDTSXXYYZZTTREWWW") + "]");
+        System.out.println("(STSXXYZZZANHFTYDTSXXYYZZTTREWWW)(?)[" + checkout("STSXXYZZZANHFTYDTSXXYYZZTTREWWWZX") + "]");
 
 
         System.out.println("CHK_END");
@@ -301,6 +301,19 @@ public class CheckoutSolution {
         }
         System.out.println("(special bundle offer string)[" + stxyz + "]");
 
+        List<String> bundleOffers = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i< stxyz.length();i++) {
+            if(i>0 && i%3 == 0) {
+                bundleOffers.add(sb.toString());
+                sb =  new StringBuilder();
+                sb.append(stxyz.charAt(i));
+            } else {
+                sb.append(stxyz.charAt(i));
+            }
+        }
+        bundleOffers.add(sb.toString());
+        System.out.println(bundleOffers);
 
         return totalSum;
     }
@@ -406,6 +419,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
