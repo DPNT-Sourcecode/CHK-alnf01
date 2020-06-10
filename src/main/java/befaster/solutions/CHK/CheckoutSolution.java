@@ -75,35 +75,30 @@ public class CheckoutSolution {
 
         Map<String,Integer> prices = new HashMap<>();
         for(String s: prices.keySet()) {
-            prices.put(s, countSpecialProducts(remainingProducts, prices.get(s)));
+            prices.put(s, countSpecialProducts(remainingProducts, s))  ;
         }
 
-        int countProdA = countSpecialProducts(remainingProducts,"A");
-
-        int countProdC = countSpecialProducts(remainingProducts,"C");
-        int countProdD = countSpecialProducts(remainingProducts,"D");
-        int countProdE = countSpecialProducts(remainingProducts,"E");
-        int countProdF = countSpecialProducts(remainingProducts,"F");
 
         //Special offers remove for 2E have 1 B
         remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
-        int countProdB = countSpecialProducts(remainingProducts,"B");
+        prices.put("B", countSpecialProducts(remainingProducts,"B"));
 
 
         int sumA =0 ;
-        if(countProdA > 0 ) {
-            int countProd5A = countProdA / 5;
-            if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
+        if(prices.get("A") > 0 ) {
+            int countProd5A = prices.get("A") / 5;
+            if (countProd5A > 0) prices.put("A", prices.get("A") - countProd5A*5);
 
-            int countProd3A = countProdA / 3;
-            int countRestA = countProdA % 3;
+            int countProd3A = prices.get("A") / 3;
+            int countRestA = prices.get("A") % 3;
             sumA = countProd5A*values.get("5A") + countProd3A * values.get("3A") + countRestA * values.get("A");
-            System.out.println("======>A " + countProd5A + "--" + countProdA + "--" + countProd3A + "--" + countRestA + "--------" + sumA);
+            System.out.println("======>A " + countProd5A + "--" + prices.get("A") + "--" + countProd3A + "--" + countRestA + "--------" + sumA);
             remainingProducts = remainingProducts.replace("A", "");
         }
 
         System.out.println("==>remainingProducts AFTER A[" + remainingProducts + "]");
         int sumB = 0;
+        int countProdB = prices.get("B");
         if(countProdB > 0) {
             int countProd2B = countProdB / 2;
             int countRestB = countProdB % 2;
@@ -115,6 +110,7 @@ public class CheckoutSolution {
         System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
 
         int sumC = 0;
+        int countProdC = prices.get("C");
         if(countProdC > 0) {
             sumC = values.get("C") * countProdC;
             System.out.println("======>C " + sumC);
@@ -124,6 +120,7 @@ public class CheckoutSolution {
 
         System.out.println("==>remainingProducts AFTER C[" + remainingProducts + "]");
         int sumD = 0;
+        int countProdD = prices.get("D");
         if(countProdD > 0) {
             sumD = values.get("D") * countProdD;
             System.out.println("======>D " + sumD);
@@ -132,6 +129,7 @@ public class CheckoutSolution {
 
         System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
         int sumE = 0;
+        int countProdE = prices.get("E");
         if(countProdE > 0) {
             sumE = values.get("E") * countProdE;
             System.out.println("======>E " + sumE);
@@ -140,6 +138,7 @@ public class CheckoutSolution {
 
         System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
         int sumF = 0;
+        int countProdF = prices.get("F");
         if(countProdF > 0) {
             sumF = values.get("F") * countProdF;
             int countProdFFree = countProdF /3;
@@ -237,6 +236,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
