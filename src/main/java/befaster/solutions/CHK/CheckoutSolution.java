@@ -11,13 +11,17 @@ public class CheckoutSolution {
         System.out.println("CHK_START");
         System.out.println("(null)[" + checkout(null) + "]");
         System.out.println("(null)[" + checkout("Z") + "]");
+        System.out.println("(null)[" + checkout("AZ") + "]");
+        System.out.println("(null)[" + checkout("AB") + "]");
+        System.out.println("(null)[" + checkout("AC3A2B") + "]");
+        System.out.println("(null)[" + checkout("AC3A2B0") + "]");
 
         System.out.println("CHK_END");
     }
 
     public static Integer checkout(String skus) {
         if(skus==null || skus.isEmpty()) return -1;
-
+        if(!chekcValidSku(skus)) return -1;
 
         return 0;
     }
@@ -28,12 +32,16 @@ public class CheckoutSolution {
         allowedChars.add("B");
         allowedChars.add("C");
         allowedChars.add("D");
-        allowedChars.add("3A");
-        allowedChars.add("2B");
 
-        
+        String skusReduced = skus.replace("3A","").replace("2B","");
+        for(int i=0; i< skusReduced.length(); i++) {
+            String checkedString = skusReduced.substring(i);
+            if(!allowedChars.contains(checkedString)) return false;
+        }
+        return true;
     }
 }
+
 
 
 
