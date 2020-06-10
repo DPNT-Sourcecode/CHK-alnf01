@@ -11,7 +11,8 @@ import java.util.Map;
 public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
-        System.out.println("(AAAAAAAAA)(380)[" + checkout("AAAAAAAAA") + "]");
+        System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]");
+        System.out.println("(AAAAA AAA AA)(430)[" + checkout("AAAAAAAAAA") + "]");
 //        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
 //        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
 //        System.out.println("(B)(30)[" + checkout("B") + "]");
@@ -45,11 +46,11 @@ public class CheckoutSolution {
         int sumA =0 ;
         if(countProdA > 0 ) {
             int countProd5A = countProdA / 5;
-            if (countProd5A > 0) countProdA = countProdA - countProd5A;
+            if (countProd5A > 0) countProdA = countProdA - countProd5A*5;
 
             int countProd3A = countProdA / 3;
             int countRestA = countProdA % 3;
-            sumA = countProd3A * values.get("3A") + countRestA * values.get("A");
+            sumA = countProd5A*values.get("5A") + countProd3A * values.get("3A") + countRestA * values.get("A");
             System.out.println("======>A " + countProdA + "--" + countProd3A + "--" + countRestA + "--------" + sumA);
             remainingProducts = remainingProducts.replace("A", "");
         }
@@ -95,7 +96,7 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("E", "");
         }
 
-        int sum = sumA + sumB + sumC + sumD;
+        int sum = sumA + sumB + sumC + sumD + sumE;
 
 
         System.out.println("SUM ("+skus+") = [" + sum + "]");
@@ -149,6 +150,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
