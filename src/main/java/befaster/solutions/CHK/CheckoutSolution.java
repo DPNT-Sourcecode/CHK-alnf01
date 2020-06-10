@@ -151,10 +151,7 @@ public class CheckoutSolution {
         int countProdF = prices.get("F");
         if(countProdF > 0) {
             sumF = values.get("F") * countProdF;
-            int countProdFFree = countProdF /3;
-            for(int i=0;i<countProdFFree;i++) {
-                sumF = sumF - values.get("F");
-            }
+            sumF = offerSameProduct("F", 2, sumF, values, prices);
             System.out.println("======>F " + sumF);
             remainingProducts = remainingProducts.replace("F", "");
         }
@@ -244,8 +241,19 @@ public class CheckoutSolution {
         return remainingProducts;
     }
 
+    public static int offerSameProduct(String product, int freeAtNumber,  int startingSum ,Map<String,Integer> values, Map<String,Integer> prices ) {
+        int countFree = prices.get(product) / (freeAtNumber+1);
+
+        for(int i=0;i<countFree;i++) {
+            startingSum = startingSum - values.get("F");
+        }
+
+        return startingSum;
+    }
+
 
 }
+
 
 
 
