@@ -41,7 +41,7 @@ public class CheckoutSolution {
         values.put("C", 20);
         values.put("D", 15);
         values.put("E", 40);
-        values.put("E", 10);
+        values.put("F", 10);
         values.put("3A", 130);
         values.put("5A", 200);
         values.put("2B", 45);
@@ -53,6 +53,7 @@ public class CheckoutSolution {
         int countProdC = countSpecialProducts(remainingProducts,"C");
         int countProdD = countSpecialProducts(remainingProducts,"D");
         int countProdE = countSpecialProducts(remainingProducts,"E");
+        int countProdF = countSpecialProducts(remainingProducts,"F");
 
         //Special offers remove stringssss for 2E remove on B
         System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
@@ -114,6 +115,14 @@ public class CheckoutSolution {
             remainingProducts = remainingProducts.replace("E", "");
         }
 
+        System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
+        int sumF = 0;
+        if(countProdF > 0) {
+            sumF = values.get("E") * countProdE;
+            System.out.println("======>F " + sumF);
+            remainingProducts = remainingProducts.replace("F", "");
+        }
+
         int sum = sumA + sumB + sumC + sumD + sumE;
 
 
@@ -146,6 +155,7 @@ public class CheckoutSolution {
         allowedChars.add("C");
         allowedChars.add("D");
         allowedChars.add("E");
+        allowedChars.add("F");
 
         //System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
@@ -168,4 +178,5 @@ public class CheckoutSolution {
 
 
 }
+
 
