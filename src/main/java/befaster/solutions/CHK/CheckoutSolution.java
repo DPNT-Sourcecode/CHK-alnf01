@@ -100,7 +100,7 @@ public class CheckoutSolution {
         values.put("W", 20);
         values.put("X", 90);
         values.put("Y", 10);
-        values.put("Z", 10);
+        values.put("Z", 50);
         values.put("3A", 130);
         values.put("3Q", 80);
         values.put("5A", 200);
@@ -317,7 +317,7 @@ public class CheckoutSolution {
         allowedChars.add("T");
         allowedChars.add("U");
         allowedChars.add("V");
-        allowedChars.add("w");
+        allowedChars.add("W");
         allowedChars.add("X");
         allowedChars.add("Y");
         allowedChars.add("Z");
@@ -375,6 +375,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
