@@ -104,12 +104,14 @@ public class CheckoutSolution {
         //Simple products
         remainingProducts = simpleProduct(remainingProducts,"C");
         remainingProducts = simpleProduct(remainingProducts,"D");
+        remainingProducts = simpleProduct(remainingProducts,"E");
         remainingProducts = simpleProduct(remainingProducts,"G");
         remainingProducts = simpleProduct(remainingProducts,"I");
         remainingProducts = simpleProduct(remainingProducts,"J");
         remainingProducts = simpleProduct(remainingProducts,"L");
-        remainingProducts = simpleProduct(remainingProducts,"M");
+        remainingProducts = simpleProduct(remainingProducts,"N");
         remainingProducts = simpleProduct(remainingProducts,"O");
+        remainingProducts = simpleProduct(remainingProducts,"R");
         remainingProducts = simpleProduct(remainingProducts,"S");
         remainingProducts = simpleProduct(remainingProducts,"T");
         remainingProducts = simpleProduct(remainingProducts,"W");
@@ -129,6 +131,10 @@ public class CheckoutSolution {
         //3R get one Q free
         remainingProducts = offerMixedProducts(remainingProducts,"R",3,"Q");
         prices.put("Q", countSpecialProducts(remainingProducts,"Q"));
+
+        remainingProducts = simpleProduct(remainingProducts,"B");
+        remainingProducts = simpleProduct(remainingProducts,"M");
+        remainingProducts = simpleProduct(remainingProducts,"Q");
 
 
 
@@ -157,17 +163,6 @@ public class CheckoutSolution {
 
         //System.out.println("==>remainingProducts AFTER B[" + remainingProducts + "]");
 
-
-
-
-
-        //System.out.println("==>remainingProducts AFTER D[" + remainingProducts + "]");
-        int countProdE = prices.get("E");
-        if(countProdE > 0) {
-            sum.put("E", values.get("E") * countProdE);
-            System.out.println("======>E " + sum.get("E"));
-            remainingProducts = remainingProducts.replace("E", "");
-        }
 
         //System.out.println("==>remainingProducts AFTER E[" + remainingProducts + "]");
         int countProdF = prices.get("F");
@@ -289,6 +284,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
