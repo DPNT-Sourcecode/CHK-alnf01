@@ -60,14 +60,15 @@ public class CheckoutSolution {
         int countProdF = countSpecialProducts(remainingProducts,"F");
 
         //Special offers remove stringssss for 2E remove on B
-        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
-        int countBFree = countProdE / 2;
-        if(countBFree > 0) {
-            for(int i=0; i< countBFree; i++) {
-                remainingProducts = remainingProducts.replaceFirst("B","");
-                System.out.println("==>remainingProducts AFTER E -- "+ i + " [" + remainingProducts + "]");
-            }
-        }
+//        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
+//        int countBFree = countProdE / 2;
+//        if(countBFree > 0) {
+//            for(int i=0; i< countBFree; i++) {
+//                remainingProducts = remainingProducts.replaceFirst("B","");
+//                System.out.println("==>remainingProducts AFTER E -- "+ i + " [" + remainingProducts + "]");
+//            }
+//        }
+        remainingProducts = offerMixedProducts(remainingProducts,"E",2,"B");
         int countProdB = countSpecialProducts(remainingProducts,"B");
 
 
@@ -183,6 +184,19 @@ public class CheckoutSolution {
         return true;
     }
 
+    public String offerMixedProducts(String remainingProducts, String prodActivator, int prodFree, String prodFreeString) {
+        System.out.println("==>remainingProducts ORIG[" + remainingProducts + "]");
+        int countProdActivator = countSpecialProducts(remainingProducts,prodActivator);
+        int countFree = countProdActivator / prodFree;
+        if(countFree > 0) {
+            for(int i=0; i< countFree; i++) {
+                remainingProducts = remainingProducts.replaceFirst(prodFreeString,"");
+                System.out.println("==>remainingProducts AFTER PROD OFFER -- "+ i + " [" + remainingProducts + "]");
+            }
+        }
+        return remainingProducts;
+    }
 
 
 }
+
