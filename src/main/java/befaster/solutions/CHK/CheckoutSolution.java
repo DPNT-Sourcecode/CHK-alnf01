@@ -23,8 +23,9 @@ public class CheckoutSolution {
 
     public  Integer checkout(String skus) {
         //validate
-        if(skus==null || skus.isEmpty()) return -1;
+        if(skus==null) return -1;
         if(!chekcValidSku(skus)) return -1;
+        if(skus.isEmpty()) return 0;
 
         Map<String,Integer> values = new HashMap<>();
         values.put("A", 50);
@@ -34,10 +35,7 @@ public class CheckoutSolution {
         values.put("3A", 130);
         values.put("2B", 45);
 
-        System.out.println("==>SKUs [" + skus + "]");
-        int countProd3A = countSpecialProducts(skus,"3A");
-        int countProd2B = countSpecialProducts(skus,"2B");
-        String remainingProducts = skus.replace("3A","").replace("2B","").trim().replace(" ","");
+        String remainingProducts = skus.trim().replace(" ","");
 
         System.out.println("==>remainingProducts [" + remainingProducts + "]");
         int countProdA = countSpecialProducts(remainingProducts,"A");
@@ -60,8 +58,7 @@ public class CheckoutSolution {
         sum += values.get("B") * countProdB;
         sum += values.get("C") * countProdC;
         sum += values.get("D") * countProdD;
-        sum += values.get("3A") * countProd3A;
-        sum += values.get("2B") * countProd2B;
+
 
         System.out.println("========>SUM [" + sum + "]");
         return sum;
@@ -110,6 +107,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
