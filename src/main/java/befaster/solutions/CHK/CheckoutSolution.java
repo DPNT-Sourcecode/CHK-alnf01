@@ -67,7 +67,8 @@ public class CheckoutSolution {
 //        System.out.println("(UUUU)(120)[" + checkout("UUUU") + "]\n\n");
 //        System.out.println("(UUUUUU)(200)[" + checkout("UUUUUU") + "]\n\n");
 
-        System.out.println("(V)(50)[" + checkout("V") + "]");
+//        System.out.println("(V)(50)[" + checkout("V") + "]");
+        System.out.println("(VV)(90)[" + checkout("VV") + "]");
 
 
         System.out.println("CHK_END");
@@ -138,8 +139,8 @@ public class CheckoutSolution {
             sum.put(s, 0)  ;
         }
 
-//        System.out.println(values);
-//        System.out.println(prices);
+        System.out.println(values);
+        System.out.println(prices);
 //        System.out.println(sum);
 
 
@@ -261,6 +262,7 @@ public class CheckoutSolution {
         }
 
         int countProdV = prices.get("V");
+        System.out.println("V=" + countProdV);
         if(countProdV > 0 ) {
             int countProd3V = countProdV / 3;
             countProdV = countProdV - countProd3V*3;
@@ -385,6 +387,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
