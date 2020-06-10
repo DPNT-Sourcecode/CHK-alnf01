@@ -9,10 +9,6 @@ import java.util.Map;
 
 
 public class CheckoutSolution {
-    private Map<String,Integer> values = new HashMap<>();
-
-
-
 
     public static void main(String ...argv) {
         System.out.println("CHK_START");
@@ -51,6 +47,26 @@ public class CheckoutSolution {
         values.put("D", 15);
         values.put("E", 40);
         values.put("F", 10);
+        values.put("G", 20);
+        values.put("H", 10);
+        values.put("I", 35);
+        values.put("J", 60);
+        values.put("K", 80);
+        values.put("L", 90);
+        values.put("M", 15);
+        values.put("N", 40);
+        values.put("O", 10);
+        values.put("P", 50);
+        values.put("Q", 30);
+        values.put("R", 50);
+        values.put("S", 30);
+        values.put("T", 20);
+        values.put("U", 40);
+        values.put("V", 50);
+        values.put("w", 20);
+        values.put("X", 90);
+        values.put("Y", 10);
+        values.put("Z", 10);
         values.put("3A", 130);
         values.put("5A", 200);
         values.put("2B", 45);
@@ -162,6 +178,26 @@ public class CheckoutSolution {
         allowedChars.add("D");
         allowedChars.add("E");
         allowedChars.add("F");
+        allowedChars.add("G");
+        allowedChars.add("H");
+        allowedChars.add("I");
+        allowedChars.add("J");
+        allowedChars.add("K");
+        allowedChars.add("L");
+        allowedChars.add("M");
+        allowedChars.add("N");
+        allowedChars.add("O");
+        allowedChars.add("P");
+        allowedChars.add("Q");
+        allowedChars.add("R");
+        allowedChars.add("S");
+        allowedChars.add("T");
+        allowedChars.add("U");
+        allowedChars.add("V");
+        allowedChars.add("w");
+        allowedChars.add("X");
+        allowedChars.add("Y");
+        allowedChars.add("Z");
 
         //System.out.println("-->" + skus);
         String skusReduced = skus.replace("3A","").replace("2B","").trim().replace(" ","");
@@ -196,5 +232,6 @@ public class CheckoutSolution {
 
 
 }
+
 
 
