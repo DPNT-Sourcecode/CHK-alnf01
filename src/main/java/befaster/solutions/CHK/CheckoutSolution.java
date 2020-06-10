@@ -34,11 +34,26 @@ public class CheckoutSolution {
         values.put("3A", 130);
         values.put("2B", 45);
 
+        System.out.println("==>SKUs [" + skus + "]");
         int countProd3A = countSpecialProducts(skus,"3A");
         int countProd2B = countSpecialProducts(skus,"2B");
-
         String remainingProducts = skus.replace("3A","").replace("2B","").trim().replace(" ","");
-        
+
+        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        int countProdA = countSpecialProducts(remainingProducts,"A");
+        remainingProducts = remainingProducts.replace("A","");
+
+        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        int countProdB = countSpecialProducts(remainingProducts,"B");
+        remainingProducts = remainingProducts.replace("B","");
+
+        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        int countProdC = countSpecialProducts(remainingProducts,"C");
+        remainingProducts = remainingProducts.replace("C","");
+
+        System.out.println("==>remainingProducts [" + remainingProducts + "]");
+        int countProdD = countSpecialProducts(remainingProducts,"D");
+        remainingProducts = remainingProducts.replace("D","");
 
         return 0;
     }
@@ -57,7 +72,7 @@ public class CheckoutSolution {
             }
         }
 
-        System.out.println("Found product [" + product + "] - " + count + " times.");
+        System.out.println("----------------------->Product [" + product + "] - " + count + " times.");
         return count;
     }
 
@@ -86,6 +101,7 @@ public class CheckoutSolution {
         return true;
     }
 }
+
 
 
 
