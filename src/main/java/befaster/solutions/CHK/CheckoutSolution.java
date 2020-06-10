@@ -11,7 +11,10 @@ import java.util.Map;
 public class CheckoutSolution {
     public static void main(String ...argv) {
         System.out.println("CHK_START");
-        System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
+        //System.out.println("(AAAAA AAA A)(380)[" + checkout("AAAAAAAAA") + "]\n\n");
+        System.out.println("(E)(40)[" + checkout("E") + "]\n\n");
+        System.out.println("(E B)(70)[" + checkout("EB") + "]\n\n");
+        System.out.println("(EE BB)(110)[" + checkout("EEBB") + "]\n\n");
 
 //        System.out.println("(BABDDCAC)(230)[" + checkout("BABDDCAC") + "]");
 //        System.out.println("(BBBB)(120)[" + checkout("BBBB") + "]");
@@ -150,6 +153,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
